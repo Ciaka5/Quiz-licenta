@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Offline</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    .card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .question { font-weight: bold; margin-bottom: 15px; }
+    button.answer { display: block; margin: 5px 0; padding: 10px; width: 100%; border-radius: 5px; border: none; cursor: pointer; }
+    button.correct { background-color: #a5d6a7; }
+    button.wrong { background-color: #ef9a9a; }
+    button:disabled { cursor: not-allowed; }
+    #next { margin-top: 15px; }
+    #result { font-size: 1.2em; margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div id="quiz">
+      <div id="question-number"></div>
+      <div class="question" id="question"></div>
+      <div id="answers"></div>
+      <button id="next" style="display:none;">Următoarea întrebare</button>
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    let questions = [];
+    let currentIndex = 0;
+    let score = 0;
+
+    async function loadQuestions() {
+      const response = await fetch('intrebari.json');
+      const data = await response.json();
+      questions = data.sort(() => 0.5 - Math.random()).slice(0, 45);
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[currentIndex];
+      document.getElementById('question-number').textContent = `Întrebarea ${currentIndex + 1} din 45`;
+      document.getElementById('question').textContent = `${q.ID}. ${q.Intrebare}`;
+      const answersDiv = document.getElementById('answers');
+      answersDiv.innerHTML = '';
+      const options = ['A', 'B', 'C', 'D', 'E'];
+      options.forEach(letter => {
+        const btn = document.createElement('button');
+        btn.textContent = q[letter];
+        btn.className = 'answer';
+        btn.onclick = () => handleAnswer(btn, letter.toLowerCase(), q.Raspuns.toLowerCase());
+        answersDiv.appendChild(btn);
+      });
+      document.getElementById('next').style.display = 'none';
+    }
+
+    function handleAnswer(button, selected, correct) {
+      const allButtons = document.querySelectorAll('button.answer');
+      allButtons.forEach(btn => btn.disabled = true);
+      if (selected === correct) {
+        button.classList.add('correct');
+        score++;
+      } else {
+        button.classList.add('wrong');
+        allButtons.forEach(btn => {
+          if (btn.textContent === questions[currentIndex][correct.toUpperCase()]) {
+            btn.classList.add('correct');
+          }
+        });
+      }
+      document.getElementById('next').style.display = 'block';
+    }
+
+    document.getElementById('next').onclick = () => {
+      currentIndex++;
+      if (currentIndex < questions.length) {
+        showQuestion();
+      } else {
+        document.getElementById('quiz').innerHTML = `<div id="result">Ai răspuns corect la ${score} din 45 întrebări. (${45 - score} greșite)</div>`;
+      }
+    };
+
+    loadQuestions();
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
