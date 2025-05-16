@@ -3161,8 +3161,8 @@
     },
     {
         "ID": "317",
-        "Intrebare": "In legatura cu asigurarile de persoane (viat",
-        "A": ", identificati afirmatia neadevarata.\na) Suma asigurata se stabileste in mod forfetar;\n",
+        "Intrebare": "In legatura cu asigurarile de persoane (viat), identificati afirmatia neadevarata.",
+        "A": "Suma asigurata se stabileste in mod forfetar;\n",
         "B": "Asigurarea de persoane (viata) are caracter reparator;\n",
         "C": "Riscurile  acoperite  de  asigurarile  de  persoane  (viata)  sunt:  vatamarea corporala, imbolnavirea, decesul, accidentul etc.\n",
         "D": "Primele  de  asigurare  se  platesc  un  timp  mai  indelungat  (mai  multi  ani) decat la asigurarile de bunuri;\n",
@@ -3171,7 +3171,7 @@
     },
     {
         "ID": "318",
-        "Intrebare": "In  legatura  cu  tarifele  de  prime  la  asigurarile  de  persoane  (viat",
+        "Intrebare": "In legatura cu tarifele de prime la asigurarile de persoane (viata), indicati afirmatia falsa:",
         "A": ", indicati afirmatia falsa:\na)  Pentru  stabilirea  tarifelor  de  prime  se  porneste  de  la  datele  cuprinse  in tabelele de mortalitate ale tarii considerate;\n",
         "B": "Tabelele  de  mortalitate  cuprind  o  seama  de  indicatori  calculati  pe  baza datelor statistice;\n",
         "C": "Indicatorii  tabelelor  de  mortalitate  sunt:  numarul  supravietuitorilor  de varsta x, numarul decedatilor intre varstele x si x+1 ani etc.\n",
@@ -3181,9 +3181,9 @@
     },
     {
         "ID": "319",
-        "Intrebare": "La asigurarile de persoane (viat",
-        "A": ":\na) Suma asigurata se stabileste in mod forfetar de catre asigurat; asigurarea de viata nu are caracter reparator; la asigurarea de renta suma asigurata se plateste sub forma unor plati periodice;\n",
-        "B": "La  asigurarea  de  renta  suma  asigurata  se  plateste  sub  forma  unor  plati periodice;   asigurarea   de   supravietuire   nu  este  prea   atractiva   comparativ  cu celelalte tipuri de asigurari de viata si asigurarile de viata si cele de deces acopera fiecare cate un singur risc;\n",
+        "Intrebare": "La asigurarile de persoane (viata)",
+        "A": "Suma asigurata se stabileste in mod forfetar de catre asigurat; asigurarea de viata nu are caracter reparator; la asigurarea de renta suma asigurata se plateste sub forma unor plati periodice;\n",
+        "B": "La  asigurarea de  renta  suma  asigurata  se  plateste  sub  forma  unor  plati periodice;   asigurarea   de   supravietuire nu  este  prea   atractiva   comparativ  cu celelalte tipuri de asigurari de viata si asigurarile de viata si cele de deces acopera fiecare cate un singur risc;\n",
         "C": "Suma asigurata se stabileste in mod forfetar de catre asigurat, asigurarea de viata nu are caracter reparator; la asigurarea de renta suma asigurata se plateste sub forma unor plati periodice; asigurarea de supravietuire nu este prea atractiva comparativ cu celelalte tipuri de asigurari de viata ai asigurarile de viata si cele de deces acopera fiecare cate un singur risc;\n",
         "D": "Toate raspunsurile sunt incomplete;\n",
         "E": "Toate raspunsurile sunt false.",
